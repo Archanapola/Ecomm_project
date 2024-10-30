@@ -1,0 +1,44 @@
+
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+
+{% block main_content %}
+<div class="container my-5">
+    <div class="row my-3">
+    <div class="col-sm-6 offset-sm-3 ">
+    <h1>Login</h1>
+    <p>Please enter your credentials to log in.</p>
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" novalidate class="shadow p-3">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        <small><a href="{% url 'password_reset' %}">Forgot Password ? </a></small><br>
+        <button type="submit" class="btn btn-primary w-100" >Login</button>
+    </form>
+
+    <p class="text-center mt-3">Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+    {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        </div>
+        </div>
+</div>
+{% endblock main_content %}

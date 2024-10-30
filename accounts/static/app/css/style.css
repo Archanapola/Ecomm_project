@@ -1,0 +1,80 @@
+
+.goodnesscount {
+    width: 100;
+
+}
+
+
+/* Row container to keep items in a horizontal row */
+.row-container {
+    display: flex;
+    justify-content: space-between;  /* Distribute space evenly */
+    flex-wrap: wrap;  /* Wrap items on smaller screens */
+}
+
+.col-md-4, .col-sm-4 {
+    flex: 0 0 30%;  /* 30% width to allow 3 items per row */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+/* Category Background Styling */
+.sarrewear, .partywears, .ethnicwear, .kurthaset, .partywear {
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8);  /* Light overlay */
+    color: #fff;  /* White text for contrast */
+}
+
+
+/* Product Image Styling with Fixed Aspect Ratio */
+.img-responsive {
+    width: 100%;  /* Full width inside the container */
+    height: 600px;  /* Set fixed height */
+    object-fit: cover;  /* Ensure image covers the space uniformly */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Product Text Styling */
+.product {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Hover Effects */
+.Goodnesssesecont:hover {
+    transform: translateX(-10px);  /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.img-responsive:hover {
+    transform: scale(1.05);  /* Slight image zoom */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .col-md-4, .col-sm-4 {
+        width: 100%;  /* Full width on mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

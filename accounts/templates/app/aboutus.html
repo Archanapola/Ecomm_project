@@ -1,0 +1,119 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+{% block banner-slider %}
+<div id="carouselExampleSlidesOnly" class="carousel slide banner-slider-center" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/images/banner/banner.jpg' %}" class="d-block "  style="width: 100%; height: 700px ;" alt="banner images">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/banner2.jpg' %}" class="d-block" style="width: 100%; height: 700px ;" alt="banner images">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/banner3.png' %}" class="d-block" style="width: 100%; height: 700px ;"  alt="banner images">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/b4.jpg' %}" class="d-block "  style="width: 100%; height: 700px ;" alt="banner images">
+      </div>
+    </div>
+  </div>
+{% endblock banner-slider %}
+
+{% block main_content %}
+
+    <div class="container my-5">
+        <!-- Page Header -->
+        <h1 class="text-center">About Us</h1>
+        <hr>
+
+        <!-- Introduction Section -->
+        <section class="intro mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{% static 'app/images/products/aboutus.png' %}" alt="About Us" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <p style="font-size: 18px;">
+                        Welcome to <strong>Women's Clothing Store</strong>, your number one source for stylish, modern, and affordable women’s clothing. We are dedicated to offering the best quality products, focusing on style, comfort, and elegance, and most importantly, empowering women through fashion.
+                    </p>
+                    <p style="font-size: 18px;">
+                        Founded in 2023, our mission is to provide every woman with the perfect outfit for every occasion. From casual wear to elegant ethnic dresses, we’ve got something for everyone. We pride ourselves on exceptional customer service and delivering top-notch clothing straight to your door.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission and Vision Section -->
+        <section class="mission-vision mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Our Mission</h2>
+                    <p style="font-size: 18px;">
+                        At <strong>Women's Clothing Store</strong>, our mission is simple: to inspire confidence and empower women through affordable, fashionable clothing. We aim to create a diverse range of clothing that is not only stylish but also comfortable and suitable for women of all ages and sizes.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Our Vision</h2>
+                    <p style="font-size: 18px;">
+                        Our vision is to become a leading brand in women’s fashion, known for quality, creativity, and commitment to customer satisfaction. We believe in creating clothes that help women feel confident, unique, and comfortable in their own skin.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us mt-5">
+            <h2 class="text-center">Why Choose Us?</h2>
+            <br></br>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center">
+                    <img src="{% static 'app/images/products/quality.png' %}" alt="Quality Products" class="img-fluid mb-3 w-90 h-60 ">
+                    <h4>High-Quality Products</h4>
+                    <p style="font-size: 16px;">
+                        We offer premium quality clothing, crafted with care to provide durability and style at competitive prices.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="{% static 'app/images/products/affordable.png' %}" alt="Affordable Prices" class="img-fluid mb-3 w-90 h-60">
+                    <h4>Affordable Prices</h4>
+                    <p style="font-size: 16px;">
+                        Our mission is to make fashion accessible to everyone, without compromising on quality or style.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="{% static 'app/images/products/customer-service.png' %}" alt="Customer Support" class="img-fluid mb-3 bg-white w-60 h-50">
+                    <h4>Excellent Customer Support</h4>
+                    <p style="font-size: 16px;">
+                        Our dedicated customer service team ensures that your shopping experience is smooth, fast, and enjoyable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="our-values mt-5">
+            <h2 class="text-center">Our Core Values</h2>
+            <ul class="list-group mt-3">
+                <li class="list-group-item">
+                    <strong>Quality:</strong> We believe in delivering top-notch products that are made to last.
+                </li>
+                <li class="list-group-item">
+                    <strong>Affordability:</strong> We aim to keep our clothing line affordable for everyone without compromising on quality.
+                </li>
+                <li class="list-group-item">
+                    <strong>Inclusivity:</strong> We believe fashion should be for everyone, which is why our clothing is designed for women of all sizes and backgrounds.
+                </li>
+                <li class="list-group-item">
+                    <strong>Customer Focus:</strong> We are passionate about providing an exceptional customer experience, from browsing our store to receiving your purchase.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-5 text-center">
+            <p>&copy; 2024 Women's Clothing Store. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+{% endblock main_content %}

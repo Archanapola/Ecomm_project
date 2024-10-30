@@ -1,0 +1,68 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}product{% endblock title %}
+
+{% block main_content %}
+
+
+<h1>Products  {{product}} </h1>
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="img2 col-lg-5 mt-5">
+            <img src="{{ product.product_img.url }}" class="image w-100 h-75" alt="{{ product.title }}" />
+        </div>
+        <div class="col-lg-6">
+            <h1 style="font-family: Georgia; font-size: 50px;">{{ product.title }}</h1>
+            <h2>Price: Rs.{{ product.discounted_price }}</h2>
+            <p><small class="text-decoration-line-through">Rs.{{ product.selling_price }}</small></p>
+            <br>
+            <h2>Product Description</h2>
+            <p>{{ product.description }}</p>
+            <p><strong>Category:</strong> {{ product.category }}</p>
+        
+    
+
+                <!-- Button Section -->
+            <div class="row mt-5 text-center row-flex" style="font-family: Arial, Helvetica, sans-serif;">
+            <div class="col-9">
+            <!-- Add to Cart button -->
+
+           
+             <form action="{% url 'add_to_cart' product.id %}" class="d-inline">
+                <input type="hidden" name="prod_id" value="{{product.id}}"/>
+                <button type="submit" class="d-grid gap-1 btn1 btn btn-danger p-1 m-1 btn-lg text-decoration-none text-white ">
+                <a href="{% url 'add_to_cart' product.id  %}" class="btn btn-danger btn-lg text-white m-1" style="min-width: 200px;">
+                Add to Cart
+                </a></button>
+                </form>
+
+
+            <!-- Buy Now button -->
+            <button type="submit" class="d-grid gap-2 btn1 btn btn-dark p-1 m-1 btn-lg text-decoration-none text-white ">
+
+            <a href="{% url 'showcart'  %}" class="btn btn-dark btn-lg m-1" >
+                Buy Now
+            </a></button>
+            <div>
+                {% if wishlist %}
+                <a pid="{{product.id}}" class="minus-wishlist btn btn-success shadow px-5 py-2 ms-4">
+                    <i class="fas fa-heart fa-lg"></i>
+                </a>
+                {% else %}
+                <a  pid="{{product.id}}" class="plus-wishlist btn btn-danger shadow px-5 py-2 ms-4">
+                    <i class="fas fa-heart fa-lg"></i>
+                </a>
+                {% endif %}
+            </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<br></br>
+
+
+{% endblock main_content %}

@@ -1,0 +1,57 @@
+{% extends 'app/base.html' %}
+{% block title %}Register{% endblock title %}
+
+{% block main_content %}
+<div class="container my-5">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3 ">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" novalidate class="shadow p-3" >
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}  <!-- Rendered with placeholder and class="form-control" -->
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}  <!-- Rendered with placeholder and class="form-control" -->
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}  <!-- Rendered with placeholder and class="form-control" -->
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.confirm_password.label_tag }}
+            {{ form.confirm_password }}  <!-- Rendered with placeholder and class="form-control" -->
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+
+        
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+    </form>
+
+    <p class="text-center mt-3">Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+</div>
+</div>
+</div>
+
+{% endblock main_content %}
+
+

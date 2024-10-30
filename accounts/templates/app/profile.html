@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+{% block title %}Profile{% endblock title %}
+
+{% block main_content %}
+<div class="container my-5">
+    <h1>Welcome <span class="text-capitalize">{{request.user}}</span></h1>
+    <p>Manage your profile information here.</p>
+
+    <hr>
+<div class="col-sm-2 border-red">
+    <ul class="list-unstyled">
+        <li class="d-grid"> <a href ="{% url 'profile' %}"class="btn btn-primary">Profile</a></li>
+        <li class="d-grid"> <a href ="{% url 'address' %}"class="btn btn">Address</a></li>
+
+    </ul>
+</div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group mb-3">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.mobile.label_tag }}
+            {{ form.mobile }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.state.label_tag }}
+            {{ form.state }}
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.zipcode.label_tag }}
+            {{ form.zipcode }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Save Profile</button>
+    </form>
+    {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+
+</div>
+{% endblock main_content %}
