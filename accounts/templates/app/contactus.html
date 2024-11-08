@@ -27,43 +27,6 @@
     <p class="text-center">We would love to hear from you! Fill out the form below, and we'll get back to you as soon as possible.</p>
     <hr>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form method="POST" action="{% url 'ContactUs' %}">
-                    {% csrf_token %}
-                    
-                    <!-- Name Field -->
-                    <div class="form-group mb-3">
-                        <label for="name">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-
-                    <!-- Email Field -->
-                    <div class="form-group mb-3">
-                        <label for="email">Your Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <!-- Subject Field -->
-                    <div class="form-group mb-3">
-                        <label for="subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject of your message" required>
-                    </div>
-
-                    <!-- Message Field -->
-                    <div class="form-group mb-3">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message here..." required></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Information Section -->
     <section class="contact-info mt-5 text-center">
