@@ -55,6 +55,9 @@ Open the application in your browser at http://127.0.0.1:8000/.
 Log in or register to explore the store.
 Admin access is available at http://127.0.0.1:8000/admin.
 Project Structure
+
+
+
 Ecomm_project/
 ├── accounts/                 # App handling user authentication and profiles
 │   ├── __pycache__/          # Python cache files
@@ -80,6 +83,8 @@ Ecomm_project/
 ├── db.sqlite3                # SQLite database file
 ├── manage.py                 # Django project management script
 ├── myenv/                    # Virtual environment (optional, not part of the repo)
+
+
 
 Future Enhancements
 Add a wishlist feature for users.
